@@ -1,0 +1,20 @@
+<mat-progress-bar mode="indeterminate"  *ngIf="isShow"></mat-progress-bar>
+<section class="container">
+  <div class="flex">
+    <div class="flex-box"  *ngFor="let blog of blogs">
+      <mat-card class="my-card">
+        <mat-card-content>
+          <h3>{{blog.title}}</h3>
+          <img src="assets/uploads/{{blog.image}}" class="image" />
+          <p>{{blog.short_desc}}</p>
+          <button mat-flat-button color="primary" routerLink="/dashboard/blog/{{blog.blog_id}}">Read More</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>
+<div class="fixed-fab">
+  <button mat-fab color="primary" routerLink="/dashboard/add-new">
+    <mat-icon>create</mat-icon>
+  </button>
+</div>

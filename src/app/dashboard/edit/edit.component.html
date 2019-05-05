@@ -1,0 +1,43 @@
+
+<div class="container">
+  <mat-card *ngIf="isData">
+    <mat-card-content class="add-blog">
+       <form [formGroup]="editForm" (submit)="onSubmit()">
+          <mat-form-field appearance="outline">
+            <mat-label>Add title</mat-label>
+            <input matInput placeholder="title" formControlName="title">
+          </mat-form-field>
+         
+          <div class="my-button">
+            <button type="button" [disabled]="isChecked" mat-flat-button (click)="input.click()" >Add Image Here</button>
+          </div>
+          <div class="my-checkbox">
+              <mat-checkbox [checked]="isChecked" (change)="isChecked = !isChecked">I do not want to change the main image.</mat-checkbox>
+          </div>
+          <img [src]="image.data" *ngIf="image" width="100" height="100" />
+          <br/>
+          <input type="file" accept="image/*" hidden #input (change)="addImage($event.target.files)">
+          <mat-form-field appearance="outline" style="width:100%">
+              <mat-label>Add keywords</mat-label>
+            <input matInput placeholder="Keywords" formControlName="keywords">
+          </mat-form-field>
+          <mat-form-field appearance="outline" style="width:100%">
+              <mat-label>Add short description</mat-label>
+              <textarea matInput placeholder="Short Description" formControlName="description"></textarea>
+          </mat-form-field>
+            <ckeditor [config]="config" [data]="editorData" (change)="onChange($event)" [editor]="Editor" (ready)="onReady($event)"></ckeditor>
+          <br/>
+        
+          <button mat-flat-button color="primary"
+                  [ngClass]="{'disabled':!editForm.valid}" 
+                  [disabled]="!editForm.valid">
+                  Update
+                  <span class="my-tooltip">Please Fill All Entries.</span>
+          </button>
+       </form>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div class="loader" *ngIf="uploaded">
+    <mat-spinner></mat-spinner>
+  </div>

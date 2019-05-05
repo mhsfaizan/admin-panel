@@ -1,0 +1,28 @@
+<section class="container">
+  <mat-grid-list cols="2" rowHeight="2:1" gutterSize="1rem">
+    <mat-grid-tile>
+      <mat-card class="grid">
+        <mat-card-title>Total Blogs</mat-card-title>
+        <mat-card-content>
+          <span routerLink="/dashboard/blogs">{{blogs}}</span>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card class="grid">
+        <mat-card-title>Comments</mat-card-title>
+        <mat-card-content>
+          <span routerLink="/dashboard/comment">{{comments}}</span>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <!-- <mat-grid-tile>
+      <mat-card class="grid">
+        <mat-card-title>Unapprove Comments</mat-card-title>
+        <mat-card-content>
+          <span routerLink="/dashboard/comment">6</span>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile> -->
+  </mat-grid-list>
+</section>

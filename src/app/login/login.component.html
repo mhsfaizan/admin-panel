@@ -1,0 +1,24 @@
+<section class="box" style="background-image:url(assets/background.jpg)">
+    <div class="login-box">
+        <mat-progress-bar *ngIf="isShowProgress" mode="indeterminate"></mat-progress-bar>
+        <mat-card>
+            <mat-card-content>
+                <h1>Sign In</h1>
+                <br>
+                <form [formGroup]="loginForm" (submit)="onSubmit()">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Email" formControlName="email">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" placeholder="Password" formControlName="password">
+                    </mat-form-field>
+                    <br>
+                    <button mat-raised-button color="primary">Sign In</button>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</section>
+<div class="layer" *ngIf="isShowProgress"></div>

@@ -1,0 +1,13 @@
+.mat-card-avatar {
+    height: 23px;
+    width: 20px;
+}
+.mat-card-avatar mat-icon{
+    font-size: 30px;
+}
+.comment-card{
+    margin-top: 1rem;
+}
+.comment-card mat-card-title,.comment-card mat-card-subtitle{
+    font-size: 10px;
+}
